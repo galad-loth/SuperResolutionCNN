@@ -1,5 +1,5 @@
 # SuperResolutionCNN
-Super resolution with convolutional neural network
+Super resolution with convolutional neural network. The implementation i sbased on MXNet.
 
 ## Reference
 
