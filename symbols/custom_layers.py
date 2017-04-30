@@ -6,7 +6,7 @@ Created on Sat Mar 25 15:41:44 2017
 """
 
 import mxnet as mx
-#import numpy as npy 
+import numpy as npy 
 
 class SRLossLayer(mx.operator.NumpyOp):
     def __init__(self):
@@ -51,3 +51,36 @@ class SRLossLayer(mx.operator.NumpyOp):
         d=conv_res-img_diff_center
         batch_size=conv_res.shape[0]
         dx[:]=d/batch_size
+
+
+class CharbonnierLossLayer(mx.operator.NumpyOp):
+    def __init__(self, epsilon):
+        super(CharbonnierLossLayer, self).__init__(False)
+        self.epsilon=epsilon
+        
+    def list_arguments(self):
+        return ['imgrec','imggt']        
+                
+    def list_outputs(self):
+        return ['imgout']
+        
+    def infer_shape(self, in_shape):
+        data_shape=in_shape[0]
+        return [data_shape, data_shape],[data_shape]
+        
+    def forward(self, in_data, out_data):
+        imgrec=in_data[0]        
+        imgout=out_data[0]
+        imgout[:]=imgrec
+    
+    def backward(self, out_grad, in_data, out_data, in_grad):        
+        imgrec=in_data[0]
+        imggt=in_data[1] 
+        dx=in_grad[0]
+        
+        diff=imgrec-imggt
+        batch_size=imgrec.shape[0]
+        diff_norm=npy.sqrt(diff*diff+self.epsilon*self.epsilon)
+        dx[:]=diff/diff_norm/batch_size
+        
+        
