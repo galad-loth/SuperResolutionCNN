@@ -11,7 +11,7 @@ from utils.dataio import SRDataBatch
 
 def get_low_res_img(img_hr, scale):
     img_shape=img_hr.shape
-    img_ds=cv2.resize(img_hr,(img_shape[1]/3, img_shape[0]/3),
+    img_ds=cv2.resize(img_hr,(img_shape[1]/scale, img_shape[0]/scale),
                       interpolation=cv2.INTER_CUBIC)  
     img_lr=cv2.resize(img_ds,(img_shape[1], img_shape[0]),
                       interpolation=cv2.INTER_CUBIC)  
@@ -40,7 +40,7 @@ if __name__=="__main__":
                     cv2.IMREAD_COLOR)
     nh,nw,nc=img.shape
 #    imghr=cv2.cvtColor(img,cv2.COLOR_BGR2YCR_CB)    
-    imglr=get_low_res_img(img,2)  
+    imglr=get_low_res_img(img,3)  
     imghr=img.astype(npy.float32)
     imglr=imglr.astype(npy.float32)
     
