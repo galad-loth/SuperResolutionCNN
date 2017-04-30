@@ -2,7 +2,7 @@
 """
 Created on Sat Apr 01 21:00:20 2017
 
-@author: Fengjilan
+@author: galad-loth
 """
 import mxnet as mx
 #import numpy as npy 
