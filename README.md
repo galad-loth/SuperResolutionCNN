@@ -9,4 +9,6 @@ Super resolution with convolutional neural network. The implementation i sbased 
 
 [3] Kim J, Kwon Lee J, Mu Lee K. Deeply-recursive convolutional network for image super-resolution[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 1637-1645.
 
+[4] Wei-Sheng Lai, Jia-Bin Huang, Narendra Ahuja, Ming-Hsuan Yang. Deep Laplacian Pyramid Networks for Fast and Accurate Super-Resolution[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017
+
 
