@@ -2,7 +2,7 @@
 """
 Created on Sat Apr 01 21:26:06 2017
 
-@author: Fengjilan
+@author: galad-loth
 """
 
 #import numpy as npy
