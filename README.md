@@ -1,5 +1,6 @@
 # SuperResolutionCNN
-Super resolution with convolutional neural network. The implementation i sbased on MXNet.
+Super resolution with convolutional neural network. The implementation is based on MXNet.
+![result](https://github.com/galad-loth/SuperResolutionCNN/blob/master/results/result.png)
 
 ## Reference
 
